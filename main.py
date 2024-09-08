@@ -48,9 +48,10 @@ def nucleotide_densities(nucleotide):
             return "Error!\n"
 
 
-def main():
+def main(total_count=None):
     transcribe_dna(read_dna_seq())
-    print("DNA Nucleotide Densities: A={0}, T={1}, C={2}, G={3} \n".format(count_A, count_T, count_C, count_G))
+    total_count = count_A + count_T + count_C + count_G
+    print("DNA Nucleotide Densities: A={0}%, T={1}%, C={2}%, G={3}% \n".format(count_A/total_count*100, count_T/total_count*100, count_C/total_count*100, count_G/total_count*100))
     print("RNA Output: " + ''.join(rna_out))
 
 
